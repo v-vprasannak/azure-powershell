@@ -244,25 +244,9 @@ Az.DataFactory
 
 Az.DesktopVirtualization
 * Added cmdlets:
-    - ''Get-AzWvdAppAttachPackage''
-    - ''Import-AzWvdAppAttachPackageInfo''
-    - ''New-AzWvdAppAttachPackage''
-    - ''Remove-AzWvdAppAttachPackage''
-    - ''Update-AzWvdAppAttachPackage''
 * Added Private Link Cmdlets
-    - ''Get-AzWvdPrivateEndpointConnection''
-    - ''Get-AzWvdPrivateLinkResource''
-    - ''Remove-AzWvdPrivateEndpointConnection''
 * Added Scaling Plan Personal Schedule cmdlets
-    - ''Get-AzWvdScalingPlanPersonalSchedule''
-    - ''New-AzWvdScalingPlanPersonalSchedule''
-    - ''Remove-AzWvdScalingPlanPersonalSchedule''
-    - ''Update-AzWvdScalingPlanPersonalSchedule''
 * Added Scaling Plan Pooled Schedule cmdlets
-    - ''Get-AzWvdScalingPlanPooledSchedule''
-    - ''New-AzWvdScalingPlanPooledSchedule''
-    - ''Remove-AzWvdScalingPlanPooledSchedule''
-    - ''Update-AzWvdScalingPlanPooledSchedule''
 * Updated rampDownCapacityThresholdPct minimum value from 0 to 1 on ScalingPlanPooledSchedule cmdlets
 * Added showInFeed property to ApplicationGroups
 
@@ -271,9 +255,6 @@ Az.DevCenter
 
 Az.Dns
 * Added cmdlets:
-    - ''Get-AzDnsDnssecConfig''
-    - ''New-AzDnsDnssecConfig''
-    - ''Remove-AzDnsDnssecConfig''
 * Added three new record types, ''DS'', ''TLSA'' and ''NAPTR''.
 
 Az.EventHub
@@ -308,24 +289,9 @@ Az.Monitor
   * [Breaking Change] Action Group upgraded API version to stable 2023-01-01
   * [Breaking Change] Use new and update cmdlets instead ''Set-AzActionGroup'' cmdlet
   * The receiver used subtype cmdlets to create a replacement for command ''New-AzActionGroupReceiver''
-    * New-AzActionGroupArmRoleReceiverObject
-    * New-AzActionGroupAutomationRunbookReceiverObject
-    * New-AzActionGroupAzureAppPushReceiverObject
-    * New-AzActionGroupAzureFunctionReceiverObject
-    * New-AzActionGroupEmailReceiverObject
-    * New-AzActionGroupEventHubReceiverObject
-    * New-AzActionGroupItsmReceiverObject
-    * New-AzActionGroupLogicAppReceiverObject
-    * New-AzActionGroupSmsReceiverObject
-    * New-AzActionGroupVoiceReceiverObject
-    * New-AzActionGroupWebhookReceiverObject
 * [Breaking Change] Data collection Rule upgraded API version to stable 2022-06-01
 * [Breaking Change] AMCS removed ''Set-AzDataCollectionRule'' cmdlet
 * Added cmdlets for data collection endpoint:
-    - ''Get-AzDataCollectionEndpoint''
-    - ''New-AzDataCollectionEndpoint''
-    - ''Remove-AzDataCollectionEndpoint''
-    - ''Update-AzDataCollectionEndpoint''
 
 Az.Network
 * [Breaking Change] Removed ''Geo'' as a valid input for parameter ''VariableName'' in ''NewAzureApplicationGatewayFirewallCustomRuleGroupByVariable''.
@@ -359,8 +325,6 @@ Az.Resources
 Az.Security
 * Fixed some minor issues
 * Updated Pricing cmdlets to support extensions
-    ''Get-AzSecurityPricing''
-    ''Set-AzSecurityPricing''
 
 Az.SecurityInsights
 * Removed unnecessary breaking change messages.
@@ -387,41 +351,10 @@ Az.StackHCI
 Az.Storage
 * Supported customer initiated migration
 * Supported creationTime filter in Blob Inventory
-    - ''New-AzStorageBlobInventoryPolicyRule''
 * Supported traling dot in Azure file and directory name by default
-    - ''Close-AzStorageFileHandle''
-    - ''Get-AzStorageFile''
-    - ''Get-AzStorageFileCopyState''
-    - ''Get-AzStorageFileContent''
-    - ''Get-AzStorageFileHandle''
-    - ''New-AzStorageDirectory''
-    - ''Remove-AzStorageDirectory''
-    - ''Remove-AzStorageFile''
-    - ''Rename-AzStorageDirectory''
-    - ''Rename-AzStorageFile''
-    - ''Set-AzStorageFileContent''
-    - ''Start-AzStorageFileCopy''
-    - ''Stop-AzStorageFileCopy''
 * Upgraded Azure.Core to 1.35.0.
 * [Breaking Change] Removed prefix ''?'' of the created SAS token
-    - ''New-AzStorageBlobSasToken''
-    - ''New-AzStorageContainerSasToken''
-    - ''New-AzStorageAccountSasToken''
-    - ''New-AzStorageFileSasToken''
-    - ''New-AzStorageShareSasToken''
-    - ''New-AzStorageQueueSasToken''
-    - ''New-AzStorageTableSasToken''
 * Migrated following Azure Queue dataplane cmdlets from ''Microsoft.Azure.Storage.Queue 11.2.2'' to ''Azure.Storage.Queues 12.16.0''
-    - ''New-AzStorageQueue''
-    - ''Get-AzStorageQueue''
-    - ''Remove-AzStorageQueue''
-    - ''New-AzStorageQueueStoredAccessPolicy''
-    - ''Get-AzStorageQueueStoredAccessPolicy''
-    - ''Set-AzStorageQueueStoredAccessPolicy''
-    - ''Remove-AzStorageQueueStoredAccessPolicy''
-
-Az.StorageMover
-
 
 Az.StorageSync
 * Fixed minor issues.

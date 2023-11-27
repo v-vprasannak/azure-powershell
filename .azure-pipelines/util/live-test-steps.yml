@@ -118,8 +118,13 @@ jobs:
       targetType: filePath
       filePath: ./tools/TestFx/Live/InvokeLiveTestCITask.ps1
       arguments: -UseWindowsPowerShell ('${{ parameters.psVersion }}' -eq '5.1') -ScriptFile './tools/TestFx/Live/ConnectLiveTestServicePrincipal.ps1 $(LiveTestSubscriptionId) $(LiveTestTenantId) $(LiveTestServicePrincipalId) $(LiveTestServicePrincipalSecret)'
-      failOnStderr: true
-    retryCountOnTaskFailure: 3
+
+  - task: CmdLine@2
+    displayName: 'Capture screenshot'
+    inputs:
+      script: |
+        screencapture $(DataLocation)/screenshot.jpg
+    condition: always()
 
   # - task: PowerShell@2
   #   displayName: Run end-to-end live scenarios
@@ -134,3 +139,4 @@ jobs:
     inputs:
       artifact: livetest-os-${{ parameters.vmImage }}-ps-${{ replace(parameters.psVersion, '*', 'x') }}
       targetPath: $(DataLocation)
+    condition: always()

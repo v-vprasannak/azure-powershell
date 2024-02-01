@@ -21,6 +21,9 @@
 -->
 ## Upcoming Release
 
+## Version 7.1.2
+* 1PGalleryImage migration parameter
+
 ## Version 7.1.1
 * Fixed `New-AzVmss` to correctly work when using `-EdgeZone` by creating the Load Balancer in the correct edge zone.
 * Removed references to image aliases in `New-AzVM` and `New-AzVmss` to images that were removed.

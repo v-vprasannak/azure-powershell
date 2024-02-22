@@ -1,5 +1,5 @@
 ---
-external help file: Az.Databricks-help.xml
+external help file:
 Module Name: Az.Databricks
 online version: https://learn.microsoft.com/powershell/module/az.databricks/get-azdatabricksaccessconnector
 schema: 2.0.0
@@ -14,26 +14,25 @@ Gets an azure databricks accessConnector.
 
 ### List1 (Default)
 ```
-Get-AzDatabricksAccessConnector [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+Get-AzDatabricksAccessConnector [-SubscriptionId <String[]>] [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### Get
 ```
 Get-AzDatabricksAccessConnector -Name <String> -ResourceGroupName <String> [-SubscriptionId <String[]>]
- [-DefaultProfile <PSObject>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
-```
-
-### List
-```
-Get-AzDatabricksAccessConnector -ResourceGroupName <String> [-SubscriptionId <String[]>]
- [-DefaultProfile <PSObject>] [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ### GetViaIdentity
 ```
 Get-AzDatabricksAccessConnector -InputObject <IDatabricksIdentity> [-DefaultProfile <PSObject>]
- [-ProgressAction <ActionPreference>] [<CommonParameters>]
+ [<CommonParameters>]
+```
+
+### List
+```
+Get-AzDatabricksAccessConnector -ResourceGroupName <String> [-SubscriptionId <String[]>]
+ [-DefaultProfile <PSObject>] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -129,21 +128,6 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProgressAction
-{{ Fill ProgressAction Description }}
-
-```yaml
-Type: System.Management.Automation.ActionPreference
-Parameter Sets: (All)
-Aliases: proga
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ResourceGroupName
 The name of the resource group.
 The name is case insensitive.
@@ -165,7 +149,7 @@ The ID of the target subscription.
 
 ```yaml
 Type: System.String[]
-Parameter Sets: List1, Get, List
+Parameter Sets: Get, List, List1
 Aliases:
 
 Required: False
@@ -188,21 +172,5 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## NOTES
 
-ALIASES
-
-COMPLEX PARAMETER PROPERTIES
-
-To create the parameters described below, construct a hash table containing the appropriate properties. For information on hash tables, run Get-Help about_Hash_Tables.
-
-
-`INPUTOBJECT <IDatabricksIdentity>`: Identity Parameter
-  - `[ConnectorName <String>]`: The name of the azure databricks accessConnector.
-  - `[GroupId <String>]`: The name of the private link resource
-  - `[Id <String>]`: Resource identity path
-  - `[PeeringName <String>]`: The name of the workspace vNet peering.
-  - `[PrivateEndpointConnectionName <String>]`: The name of the private endpoint connection
-  - `[ResourceGroupName <String>]`: The name of the resource group. The name is case insensitive.
-  - `[SubscriptionId <String>]`: The ID of the target subscription.
-  - `[WorkspaceName <String>]`: The name of the workspace.
-
 ## RELATED LINKS
+

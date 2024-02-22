@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Az.Databricks-help.xml
 Module Name: Az.Databricks
 online version: https://learn.microsoft.com/powershell/module/az.databricks/update-azdatabricksaccessconnector
 schema: 2.0.0
@@ -16,14 +16,16 @@ Updates an azure databricks accessConnector.
 ```
 Update-AzDatabricksAccessConnector -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
  [-IdentityType <ManagedServiceIdentityType>] [-IdentityUserAssignedIdentity <Hashtable>] [-Tag <Hashtable>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ### UpdateViaIdentityExpanded
 ```
 Update-AzDatabricksAccessConnector -InputObject <IDatabricksIdentity>
  [-IdentityType <ManagedServiceIdentityType>] [-IdentityUserAssignedIdentity <Hashtable>] [-Tag <Hashtable>]
- [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm]
+ [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -168,6 +170,21 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: System.Management.Automation.ActionPreference
+Parameter Sets: (All)
+Aliases: proga
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
 ### -ResourceGroupName
 The name of the resource group.
 The name is case insensitive.
@@ -276,4 +293,3 @@ To create the parameters described below, construct a hash table containing the 
   - `[WorkspaceName <String>]`: The name of the workspace.
 
 ## RELATED LINKS
-

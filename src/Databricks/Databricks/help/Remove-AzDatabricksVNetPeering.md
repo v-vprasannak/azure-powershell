@@ -1,5 +1,5 @@
 ---
-external help file:
+external help file: Az.Databricks-help.xml
 Module Name: Az.Databricks
 online version: https://learn.microsoft.com/powershell/module/az.databricks/remove-azdatabricksvnetpeering
 schema: 2.0.0
@@ -14,15 +14,15 @@ Deletes the workspace vNetPeering.
 
 ### Delete (Default)
 ```
-Remove-AzDatabricksVNetPeering -Name <String> -ResourceGroupName <String> -WorkspaceName <String>
- [-SubscriptionId <String>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru] [-Confirm] [-WhatIf]
- [<CommonParameters>]
+Remove-AzDatabricksVNetPeering -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
+ -WorkspaceName <String> [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-PassThru]
+ [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ### DeleteViaIdentity
 ```
 Remove-AzDatabricksVNetPeering -InputObject <IDatabricksIdentity> [-DefaultProfile <PSObject>] [-AsJob]
- [-NoWait] [-PassThru] [-Confirm] [-WhatIf] [<CommonParameters>]
+ [-NoWait] [-PassThru] [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
@@ -32,7 +32,7 @@ Deletes the workspace vNetPeering.
 
 ### Example 1: Remove a vnet peering of databricks by name.
 ```powershell
-Remove-AzDatabricksVNetPeering -Name vnet-peering-t1 -WorkspaceName azps-databricks-workspace-t1 -ResourceGroupName azps_test_gp_db 
+Remove-AzDatabricksVNetPeering -Name vnet-peering-t1 -WorkspaceName azps-databricks-workspace-t1 -ResourceGroupName azps_test_gp_db
 ```
 
 This command removes a vnet peering of databricks by name.
@@ -130,6 +130,21 @@ Returns true when the command succeeds
 Type: System.Management.Automation.SwitchParameter
 Parameter Sets: (All)
 Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -ProgressAction
+{{ Fill ProgressAction Description }}
+
+```yaml
+Type: System.Management.Automation.ActionPreference
+Parameter Sets: (All)
+Aliases: proga
 
 Required: False
 Position: Named
@@ -246,4 +261,3 @@ To create the parameters described below, construct a hash table containing the 
   - `[WorkspaceName <String>]`: The name of the workspace.
 
 ## RELATED LINKS
-

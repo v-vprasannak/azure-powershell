@@ -1,32 +1,39 @@
 ---
-external help file: Az.Databricks-help.xml
+external help file:
 Module Name: Az.Databricks
-online version: https://learn.microsoft.com/powershell/module/az.databricks/new-azdatabricksaccessconnector
+online version: https://learn.microsoft.com/powershell/module/az.databricks/update-azdatabricksaccessconnector
 schema: 2.0.0
 ---
 
-# New-AzDatabricksAccessConnector
+# Update-AzDatabricksAccessConnector
 
 ## SYNOPSIS
-Creates or updates azure databricks accessConnector.
+Updates an azure databricks accessConnector.
 
 ## SYNTAX
 
+### UpdateExpanded (Default)
 ```
-New-AzDatabricksAccessConnector -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
- -Location <String> [-IdentityType <ManagedServiceIdentityType>] [-Tag <Hashtable>]
- [-UserAssignedIdentity <Hashtable>] [-DefaultProfile <PSObject>] [-AsJob] [-NoWait]
- [-ProgressAction <ActionPreference>] [-WhatIf] [-Confirm] [<CommonParameters>]
+Update-AzDatabricksAccessConnector -Name <String> -ResourceGroupName <String> [-SubscriptionId <String>]
+ [-IdentityType <ManagedServiceIdentityType>] [-IdentityUserAssignedIdentity <Hashtable>] [-Tag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
+```
+
+### UpdateViaIdentityExpanded
+```
+Update-AzDatabricksAccessConnector -InputObject <IDatabricksIdentity>
+ [-IdentityType <ManagedServiceIdentityType>] [-IdentityUserAssignedIdentity <Hashtable>] [-Tag <Hashtable>]
+ [-DefaultProfile <PSObject>] [-AsJob] [-NoWait] [-Confirm] [-WhatIf] [<CommonParameters>]
 ```
 
 ## DESCRIPTION
-Creates or updates azure databricks accessConnector.
+Updates an azure databricks accessConnector.
 
 ## EXAMPLES
 
-### Example 1: Creates or updates azure databricks accessConnector.
+### Example 1: Updates an azure databricks accessConnector.
 ```powershell
-New-AzDatabricksAccessConnector -ResourceGroupName azps_test_gp_db -Name azps-databricks-accessconnector -Location eastus -IdentityType 'SystemAssigned'
+Update-AzDatabricksAccessConnector -ResourceGroupName azps_test_gp_db -Name azps-databricks-accessconnector -Tag @{'key'='value'}
 ```
 
 ```output
@@ -35,7 +42,20 @@ Location Name                            ResourceGroupName
 eastus   azps-databricks-accessconnector azps_test_gp_db
 ```
 
-This command creates or updates azure databricks accessConnector.
+This command updates an azure databricks accessConnector.
+
+### Example 2: Updates an azure databricks accessConnector by pipeline.
+```powershell
+Get-AzDatabricksAccessConnector -ResourceGroupName azps_test_gp_db -Name azps-databricks-accessconnector | Update-AzDatabricksAccessConnector  -Tag @{'key'='value'}
+```
+
+```output
+Location Name                            ResourceGroupName
+-------- ----                            -----------------
+eastus   azps-databricks-accessconnector azps_test_gp_db
+```
+
+This command updates an azure databricks accessConnector by pipeline.
 
 ## PARAMETERS
 
@@ -85,18 +105,36 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -Location
-The geo-location where the resource lives
+### -IdentityUserAssignedIdentity
+The set of user assigned identities associated with the resource.
+The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}.
+The dictionary values can be empty objects ({}) in requests.
 
 ```yaml
-Type: System.String
+Type: System.Collections.Hashtable
 Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### -InputObject
+Identity Parameter
+To construct, see NOTES section for INPUTOBJECT properties and create a hash table.
+
+```yaml
+Type: Microsoft.Azure.PowerShell.Cmdlets.Databricks.Models.IDatabricksIdentity
+Parameter Sets: UpdateViaIdentityExpanded
 Aliases:
 
 Required: True
 Position: Named
 Default value: None
-Accept pipeline input: False
+Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
@@ -105,7 +143,7 @@ The name of the azure databricks accessConnector.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -130,28 +168,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### -ProgressAction
-{{ Fill ProgressAction Description }}
-
-```yaml
-Type: System.Management.Automation.ActionPreference
-Parameter Sets: (All)
-Aliases: proga
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
 ### -ResourceGroupName
 The name of the resource group.
 The name is case insensitive.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: True
@@ -166,7 +189,7 @@ The ID of the target subscription.
 
 ```yaml
 Type: System.String
-Parameter Sets: (All)
+Parameter Sets: UpdateExpanded
 Aliases:
 
 Required: False
@@ -178,23 +201,6 @@ Accept wildcard characters: False
 
 ### -Tag
 Resource tags.
-
-```yaml
-Type: System.Collections.Hashtable
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### -UserAssignedIdentity
-The set of user assigned identities associated with the resource.
-The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}.
-The dictionary values can be empty objects ({}) in requests.
 
 ```yaml
 Type: System.Collections.Hashtable
@@ -244,12 +250,13 @@ This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable
 
 ## INPUTS
 
+### Microsoft.Azure.PowerShell.Cmdlets.Databricks.Models.IDatabricksIdentity
+
 ## OUTPUTS
 
 ### Microsoft.Azure.PowerShell.Cmdlets.Databricks.Models.Api20230501.IAccessConnector
 
 ## NOTES
 
-ALIASES
-
 ## RELATED LINKS
+
